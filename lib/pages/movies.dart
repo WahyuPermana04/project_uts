@@ -21,7 +21,7 @@ class Movies extends StatefulWidget {
 
 class _movies extends State<Movies> {
   List<Mmovies> nowPlayingMovies = [];
-  String base_url = 'http://192.168.43.246/image/';
+  String base_url = 'http://localhost/image/';
   bool loading = true;
   List<Widget> imageSliders = [];
 
@@ -60,6 +60,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -137,6 +138,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },
@@ -214,6 +216,7 @@ class _movies extends State<Movies> {
                     Preferensi().setMovieProduksi = item.produksi;
                     Preferensi().setMovieSutradara = item.sutradara;
                     Preferensi().setMovieSinopsis = item.sinopsis;
+                    Preferensi().setMoviePath = item.file_name;
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Nextpage()));
                   },

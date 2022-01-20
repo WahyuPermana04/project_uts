@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 import '../model/user.dart';
 import '../model/preferensi.dart';
 import 'select_kursi.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class Nextpage extends StatelessWidget {
+class Nextpage extends StatefulWidget {
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return detailMovie();
+  }
+}
+
+class detailMovie extends State<Nextpage> {
+  String base_url = 'http://localhost/image/';
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -31,12 +41,12 @@ class Nextpage extends StatelessWidget {
               Container(
                 height: 225.0,
                 color: Colors.grey[200],
-                // child: Image.network(
-                //   "http://192.168.0.2/img/"+Preferensi().getMoviePath,
-                //   fit: BoxFit.fill,
-                //   width: MediaQuery.of(context).size.width,
-                //   // height: 75,
-                // ),
+                child: Image.network(
+                  base_url + Preferensi().getMoviePath,
+                  fit: BoxFit.fill,
+                  width: MediaQuery.of(context).size.width,
+                  // height: 75,
+                ),
                 // WidgetCarousel(
                 //   pages: film.images
                 //       .map((url) => FadeInImage(

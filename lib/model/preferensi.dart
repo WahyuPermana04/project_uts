@@ -40,16 +40,16 @@ class Preferensi {
   String get getLanguage => _sharedPreferences.getString('language') ?? '';
 
   set setMoviesStatus(int status) {
-    _sharedPreferences.setInt('Mstatus', status);
+    _sharedPreferences.setInt('status', status);
   }
 
-  int get getMoviesStatus => _sharedPreferences.getInt('Mstatus') ?? 0;
+  int get getMoviesStatus => _sharedPreferences.getInt('status') ?? 0;
 
   set setMoviesID(int id) {
-    _sharedPreferences.setInt('MID', id);
+    _sharedPreferences.setInt('id', id);
   }
 
-  int get getMoviesID => _sharedPreferences.getInt('MID') ?? 0;
+  int get getMoviesID => _sharedPreferences.getInt('id') ?? 0;
 
   set setMovieSutradara(String sutradara) {
     _sharedPreferences.setString('sutradara', sutradara);
@@ -72,4 +72,10 @@ class Preferensi {
   }
 
   String get getMovieName => _sharedPreferences.getString('nama') ?? '';
+
+  set setMoviePath(String file_name) {
+    _sharedPreferences.setString('file_name', file_name);
+  }
+
+  String get getMoviePath => _sharedPreferences.getString('file_name') ?? '';
 }
