@@ -115,7 +115,7 @@ class MissedCallsPage extends StatefulWidget {
 }
 
 class _MissedCallsPage extends State<MissedCallsPage> {
-  final String url = 'http://192.168.0.2/api/history-tiket/';
+  final String url = 'http://192.168.43.246/api/m_pemesanan';
   List<TiketList> tikets = [];
   Future getTiketData(String email) async {
     final response = await http.get(Uri.parse(url + email));

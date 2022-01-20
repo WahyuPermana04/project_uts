@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('books', 'API\bookController@index');
 // Route::get('books/{id}', 'API\bookController@show');
 Route::resource('books', 'API\bookController');
+// Route::get('/books/get', 'API\bookController@index');
 // Route::post('books', 'API\bookController@store');
 // Route::put('books/{id}', 'API\bookController@update');
 Route::resource('mobiles', 'API\MobileController');
@@ -28,3 +29,4 @@ Route::post('/upload/proses', 'C_upload@proses_upload');
 Route::get('moviesnowplaying', 'API\MobileController@getMoviesNP');
 Route::get('moviesbrowse', 'API\MobileController@getMoviesBrowse');
 Route::get('moviescomingsoon', 'API\MobileController@getMoviesCS');
+Route::resource('m_pemesanan','API\M_pemesananController');

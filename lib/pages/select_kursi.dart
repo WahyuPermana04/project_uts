@@ -18,7 +18,7 @@ class SelectKursi extends StatefulWidget {
 class _SelectKursiState extends State<SelectKursi> {
   Future<Pemesanan> storePemesanan(
       String id_movie, String kursi, String email) async {
-    var url = 'http://192.168.0.2/api/pemesanan-tiket';
+    var url = 'http://192.168.43.246/api/m_pemesanan';
     final response = await http.post(Uri.parse(url), headers: {
       'Accept': 'application/json',
     }, body: {
@@ -77,7 +77,7 @@ class _SelectKursiState extends State<SelectKursi> {
                             width: MediaQuery.of(context).size.width / 2,
                             child: Text(
                               //widget.ticket.movieDetail.title,
-                              Preferensi().getMovieName + Preferensi().getEmail,
+                              Preferensi().getMovieName,
                               style: TextStyle(fontSize: 20),
                               maxLines: 2,
                               overflow: TextOverflow.clip,
@@ -201,7 +201,7 @@ class _SelectKursiState extends State<SelectKursi> {
         future: tiket,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            Preferensi().setEmail = snapshot.data!.email;
+            //Preferensi().setEmail = snapshot.data!.email;
             // Preferensi().setEmail = snapshot.data!.email;
             WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
               Navigator.push(
